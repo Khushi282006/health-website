@@ -1,0 +1,421 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Healthy Body, Healthy Mind</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+background-color: #f0fff0;
+color: #333;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+header {
+position: fixed;
+top: 0;
+width: 100%;
+background: #2e8b57;
+color: white;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 999;
+box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+font-weight: bold;
+font-size: 1.5rem;
+}
+
+nav a {
+margin-left: 20px;
+font-weight: 500;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: #b2f7c2;
+}
+
+section {
+padding: 100px 20px 60px;
+max-width: 1200px;
+margin: auto;
+border-bottom-left-radius: 60px;
+border-top-right-radius: 60px;
+}
+
+h1, h2, h3 {
+margin-bottom: 20px;
+color: #2e8b57;
+background: #d0f0c0;
+padding: 10px;
+border-radius: 8px;
+}
+
+.cta-button {
+display: inline-block;
+margin-top: 30px;
+background-color: #25d366;
+color: white;
+padding: 12px 30px;
+border-radius: 30px;
+font-weight: bold;
+transition: background 0.3s ease;
+animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+background-color: #128c7e;
+}
+
+.center {
+text-align: center;
+}
+
+.testimonial-slider {
+overflow: hidden;
+white-space: nowrap;
+background-color: #e8f5e9;
+padding: 1rem;
+margin-top: 2rem;
+}
+
+.testimonial-slider span {
+display: inline-block;
+padding-right: 3rem;
+animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+0% { transform: translateX(100%); }
+100% { transform: translateX(-100%); }
+}
+
+.why-boxes {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+margin-top: 20px;
+}
+
+.why-box {
+flex: 1 1 250px;
+background: #fff;
+border-left: 5px solid #2e8b57;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+transition: transform 0.3s;
+}
+
+.why-box:hover {
+transform: translateY(-5px);
+}
+
+.qna-item {
+margin-bottom: 15px;
+}
+
+.qna-item button {
+background-color: #2e8b57;
+color: white;
+border: none;
+padding: 10px;
+width: 100%;
+text-align: left;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+position: relative;
+}
+
+.qna-item button::after {
+content: '▼';
+position: absolute;
+right: 15px;
+font-size: 16px;
+}
+
+.qna-answer {
+display: none;
+padding: 10px;
+background: #f9fff9;
+border-left: 4px solid #2e8b57;
+margin-top: 5px;
+border-radius: 6px;
+}
+
+.journey-steps {
+display: grid;
+gap: 20px;
+margin-top: 20px;
+grid-template-columns: repeat(3, 1fr);
+}
+
+.journey-step {
+background-color: #f0fff0;
+padding: 20px;
+border-radius: 10px;
+border-left: 6px solid #2e8b57;
+transition: 0.3s ease;
+}
+
+.journey-step:hover {
+background-color: #e8ffe6;
+}
+
+.timeline {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 40px;
+background-color: #d0f0c0;
+padding: 30px;
+border-radius: 15px;
+}
+
+.timeline-step {
+position: relative;
+padding: 20px;
+margin: 10px 0;
+background-color: #ffffff;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+width: 80%;
+}
+
+.timeline-step::before {
+content: '';
+position: absolute;
+left: -20px;
+top: 10px;
+width: 20px;
+height: 20px;
+background-color: #2e8b57;
+border-radius: 50%;
+}
+
+footer {
+text-align: center;
+padding: 20px;
+background: #2e8b57;
+color: white;
+}
+
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media(max-width: 768px) {
+nav a {
+margin-left: 10px;
+font-size: 0.9rem;
+}
+
+.why-boxes {
+flex-direction: column;
+}
+
+.journey-steps {
+grid-template-columns: 1fr;
+}
+}
+
+/* Centering section headlines */
+h2, .timeline h2, .center {
+text-align: center;
+}
+
+/* Reach Out Section Styles */
+.reach-out-section {
+background-color: #2e8b57;
+color: white;
+padding: 40px;
+text-align: center;
+border-top: 2px solid #fff;
+}
+
+.reach-out-section h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+.reach-out-section p {
+margin-bottom: 15px;
+font-size: 1.1rem;
+}
+
+.reach-out-section .cta-button {
+background-color: #128c7e;
+padding: 14px 32px;
+font-size: 1.2rem;
+}
+
+.reach-out-section .cta-button:hover {
+background-color: #25d366;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+<div class="logo">Healthy Body Healthy Mind</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#journey">My Journey</a>
+<a href="#qna">Q&A</a>
+<a href="#contact">Reach Out</a>
+</nav>
+</header>
+
+<!-- Home -->
+<section id="home">
+<h1>Welcome to Healthy Body, Healthy Mind</h1>
+<p>Your journey to better health begins here. We help you build long-lasting habits, boost energy, and transform your well-being.</p>
+<div class="why-boxes">
+<div class="why-box">24/7 Open & Accessible</div>
+<div class="why-box">Customized Wellness Programs</div>
+<div class="why-box">Evidence-Based Nutrition Guidance</div>
+<div class="why-box">Compassionate Personal Support</div>
+<div class="why-box">Virtual & In-Person Consultations</div>
+<div class="why-box">5-Star Google Reviews</div>
+</div>
+<div class="center">
+<a href="https://wa.me/918380071020" class="cta-button">Book Appointment on WhatsApp</a>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonial-slider">
+<span>“Life-changing transformation!”</span>
+<span>“Best wellness coach I've met!”</span>
+<span>“Very effective and supportive service.”</span>
+<span>“Highly recommend the 100-day plan!”</span>
+</div>
+</section>
+
+<!-- About -->
+<section id="about" style="background:#fdfef7;">
+<h2>About Us</h2>
+<p><strong>Who We Are</strong><br>Healthy Body, Healthy Mind is more than a wellness brand—it's a mission to help individuals unlock their best selves through mindful eating and sustainable lifestyle changes.</p>
+<p><strong>Our Vision</strong><br>To create a world where wellness is not a luxury but a lifestyle available and accessible to everyone—regardless of age, weight, or background.</p>
+<p><strong>Our Mission</strong><br>To empower individuals through personalized nutrition coaching, lifestyle education, and ongoing support, so they can build long-term habits for a healthy body and a peaceful mind.</p>
+</section>
+
+<!-- Services -->
+<section id="services" style="background:#ffffff;">
+<h2>Our Services</h2>
+<h3 style="background:#2e8b57; color:white; padding:10px; border-radius:8px;">Personalized Diet Plans</h3>
+<p>Get a meal plan customized just for your body, lifestyle, and goals. No fads, only results.</p>
+
+<h3 style="background:#2e8b57; color:white; padding:10px; border-radius:8px;">10-Day Gut Reset</h3>
+<p>Reboot your digestive health with targeted nutrition that reduces bloating and boosts immunity.</p>
+
+<h3 style="background:#2e8b57; color:white; padding:10px; border-radius:8px;">21/100-Day Transformations</h3>
+<p>Begin with 21 days or go deeper with 100-day journeys to reset and renew your body and mind.</p>
+
+<h3 style="background:#2e8b57; color:white; padding:10px; border-radius:8px;">Specialized Nutrition Coaching</h3>
+<p>Work one-on-one with a certified nutritionist to address specific needs like weight management, digestive health, and energy.</p>
+</section>
+
+<!-- My Journey -->
+<section id="journey" class="center" style="background:#e8ffe6;">
+<h2>My Wellness Journey</h2>
+<div class="journey-steps">
+<div class="journey-step">
+<h3>Step 1: Foundation</h3>
+<p>Starting with a solid foundation of healthy habits.</p>
+</div>
+<div class="journey-step">
+<h3>Step 2: Growth</h3>
+<p>Adapting and integrating changes into daily life.</p>
+</div>
+<div class="journey-step">
+<h3>Step 3: Transformation</h3>
+<p>Transforming your life to achieve lasting results.</p>
+</div>
+</div>
+</section>
+
+<!-- Q&A -->
+<section id="qna">
+    <h2>Q&A</h2>
+    <div class="qna-item">
+    <button>Who can join your health programs?</button>
+    <div class="qna-answer">
+    <p>Anyone looking to improve their health—whether it's for weight loss, better energy, digestion, or overall lifestyle improvement—can join. We customize plans for different ages, body types, and goals.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>Do I need to go to the gym or follow a workout?</button>
+    <div class="qna-answer">
+    <p>Not necessarily. We focus on nutrition first. Home workouts or basic movement guidance may be provided based on your goals and preferences.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>Are the meal plans vegetarian or non-vegetarian?</button>
+    <div class="qna-answer">
+    <p>Both options are available. We customize according to your dietary preferences (vegetarian, vegan, or non-veg) and any food allergies.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>Will I have to eat boring or bland food?</button>
+    <div class="qna-answer">
+    <p>No! Our plans include tasty, home-style meals with healthy tweaks that are easy to prepare and sustain.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>How much weight can I expect to lose?</button>
+    <div class="qna-answer">
+    <p>Healthy weight loss is around 2–4 kg per month. It depends on your body type, lifestyle, and how consistently you follow the plan.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>Is there a refund if I don’t see results?</button>
+    <div class="qna-answer">
+    <p>We offer support to adjust the plan as needed. Results depend on your consistency, but we ensure constant guidance to help you stay on track.</p>
+    </div>
+    </div>
+    <div class="qna-item">
+    <button>How do I track my progress?</button>
+    <div class
+
+<!-- Reach Out Section -->
+<section id="contact" class="reach-out-section">
+<h2>Reach Out</h2>
+<p>📞 Phone: +91 83800 71020</p>
+<p>📍 Address: Exotica Building, Casa Rio, Lodha Palava City, Near Ganesh Temple, Dombivli, Maharashtra 421204</p>
+<p>🕒 Status: Open 24 Hours, 7 Days a Week</p>
+<p>⭐ Customer Rating: ★★★★★ on Google Reviews</p>
+<div class="center">
+<a href="https://wa.me/918380071020" class="cta-button">Get in Touch with Us</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2025 Healthy Body, Healthy Mind | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
